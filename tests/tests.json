@@ -8,81 +8,79 @@
       "area calculation",
       "SVG export"
     ],
-    "description": "Confirms a room can be edited and the plan export workflow is available.",
+    "description": "Verifies a room can be edited and the floor plan exported.",
     "steps": [
       "Select a room in the 2D plan",
-      "Change its name or width in the inspector",
-      "Use the SVG export control"
+      "Change its name or width",
+      "Export the plan as SVG"
     ],
-    "expected": "The room reflects the edited property and an SVG floor-plan file is downloaded."
+    "expected": "The room updates and an SVG floor-plan file is downloaded."
   },
   {
-    "name": "Add and reposition fixtures",
+    "name": "Add objects and create custom furniture",
     "viewport": "desktop",
     "covers": [
-      "doors and windows",
       "furniture library",
-      "drag placement",
+      "custom furniture prompt workflow",
+      "object placement",
       "fixture properties"
     ],
-    "description": "Verifies users can add objects and edit their placement and size.",
+    "description": "Verifies standard objects and prompt-created furniture concepts can be added and edited.",
     "steps": [
       "Open Doors, windows & furniture",
-      "Add a window and a chair",
-      "Select the new object and change its width"
+      "Add a window",
+      "Open Design custom furniture, enter a custom item description, and create it"
     ],
-    "expected": "Both objects appear on the plan and the selected object's dimensions update."
+    "expected": "The objects appear on the plan and the custom item is added with an editable size and position."
   },
   {
-    "name": "Manage floors and project files",
+    "name": "Manage floors and portable projects",
     "viewport": "desktop",
     "covers": [
       "multi-storey support",
-      "save project",
-      "open project",
-      "duplicate project",
-      "local autosave"
+      "local autosave",
+      "project import and export",
+      "duplicate project"
     ],
-    "description": "Checks multi-floor planning and portable project file workflows.",
+    "description": "Checks floor management and portable project file workflows.",
     "steps": [
-      "Add a first floor and switch to it",
+      "Add a floor and switch to it",
       "Download the project file",
-      "Duplicate the current project"
+      "Duplicate the project"
     ],
-    "expected": "The floor selector updates, a project JSON file downloads, and the duplicate receives a distinct name."
+    "expected": "The floor selector updates, a JSON project downloads, and a duplicate receives a new name."
   },
   {
     "name": "Adjust exterior and construction estimate",
     "viewport": "desktop",
     "covers": [
       "exterior designer",
-      "construction cost estimator",
-      "editable price assumptions",
+      "editable cost assumptions",
+      "budget recalculation",
       "PDF print export"
     ],
-    "description": "Verifies exterior colours and editable budget assumptions affect the design and estimate.",
+    "description": "Verifies exterior customization and editable construction estimates.",
     "steps": [
-      "Open Exterior designer and change the wall colour",
+      "Change the exterior wall colour",
       "Open the cost estimator",
-      "Change the construction rate"
+      "Edit the construction rate"
     ],
-    "expected": "The exterior colour changes and the estimate recalculates using the new rate."
+    "expected": "The exterior changes and the budget recalculates using the new rate."
   },
   {
-    "name": "Use the planner on mobile and delete an item",
+    "name": "Use the planner on mobile and remove an item",
     "viewport": "mobile",
     "covers": [
       "responsive layout",
-      "selection inspector",
-      "delete selected item",
-      "guardrail"
+      "mobile controls",
+      "delete selected item"
     ],
-    "description": "Checks mobile-friendly planning controls and removal of a selected item.",
+    "description": "Checks mobile planning controls and safe item removal.",
     "steps": [
-      "Open the 2D plan at mobile width",
-      "Select a room and use delete selected",
-      "Confirm the room no longer appears"
+      "Open the planner at mobile width",
+      "Select a room and delete it",
+      "Check the floor plan"
     ],
-    "expected": "The plan controls remain usable on mobile and the selected room is removed."
+    "expected": "The planner remains usable and the selected room is removed."
   }
 ]
