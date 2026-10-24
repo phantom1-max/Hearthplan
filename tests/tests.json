@@ -1,86 +1,86 @@
 [
   {
-    "name": "Edit a room and export a floor plan",
+    "name": "Create a blank project and switch floors",
     "sanity": true,
     "viewport": "desktop",
     "covers": [
-      "room editing",
-      "area calculation",
-      "SVG export"
+      "blank-project onboarding",
+      "plot dimensions",
+      "floor tabs",
+      "empty canvas"
     ],
-    "description": "Verifies a room can be edited and the floor plan exported.",
+    "description": "Verifies the new project starts empty with the requested plot dimensions and floor navigation.",
     "steps": [
-      "Select a room in the 2D plan",
-      "Change its name or width",
-      "Export the plan as SVG"
+      "Choose Blank project on the welcome screen",
+      "Enter a project name, plot dimensions, and two floors",
+      "Create the project and switch to First Floor"
     ],
-    "expected": "The room updates and an SVG floor-plan file is downloaded."
+    "expected": "The editor opens with no rooms or furniture, shows the defined plot boundary, and switches between floor tabs."
   },
   {
-    "name": "Add objects and create custom furniture",
+    "name": "Add a room and edit its exact dimensions",
     "viewport": "desktop",
     "covers": [
-      "furniture library",
-      "custom furniture prompt workflow",
-      "object placement",
-      "fixture properties"
+      "plus-button actions",
+      "room creation",
+      "drag-to-resize",
+      "numeric room dimensions"
     ],
-    "description": "Verifies standard objects and prompt-created furniture concepts can be added and edited.",
+    "description": "Verifies a room can be added and its dimensions can be edited from the inspector.",
     "steps": [
-      "Open Doors, windows & furniture",
-      "Add a window",
-      "Open Design custom furniture, enter a custom item description, and create it"
+      "Create a blank project",
+      "Use the plus button to add a bedroom",
+      "Change its length and breadth in the properties panel"
     ],
-    "expected": "The objects appear on the plan and the custom item is added with an editable size and position."
+    "expected": "The selected room appears on the canvas and its geometry updates to match the entered dimensions."
   },
   {
-    "name": "Manage floors and portable projects",
+    "name": "Search and place furniture",
     "viewport": "desktop",
     "covers": [
-      "multi-storey support",
+      "furniture search",
+      "furniture placement",
+      "furniture property editing"
+    ],
+    "description": "Verifies the searchable library inserts an editable furniture object.",
+    "steps": [
+      "Create a blank project and open the plus menu",
+      "Choose Add Furniture",
+      "Search for a desk and add Study desk"
+    ],
+    "expected": "The desk appears on the active floor and can be selected and resized."
+  },
+  {
+    "name": "Export a plan and retain the local draft",
+    "viewport": "desktop",
+    "covers": [
       "local autosave",
-      "project import and export",
-      "duplicate project"
+      "editable project export",
+      "print to PDF"
     ],
-    "description": "Checks floor management and portable project file workflows.",
+    "description": "Verifies the project is saved locally and both project-file and PDF-print workflows are available.",
     "steps": [
-      "Add a floor and switch to it",
-      "Download the project file",
-      "Duplicate the project"
+      "Create a project and add a room",
+      "Open Export",
+      "Choose Download editable project and then Print / Save as PDF"
     ],
-    "expected": "The floor selector updates, a JSON project downloads, and a duplicate receives a new name."
+    "expected": "A Hearthplan JSON project file downloads and the browser print dialog can be used to save a PDF."
   },
   {
-    "name": "Adjust exterior and construction estimate",
-    "viewport": "desktop",
-    "covers": [
-      "exterior designer",
-      "editable cost assumptions",
-      "budget recalculation",
-      "PDF print export"
-    ],
-    "description": "Verifies exterior customization and editable construction estimates.",
-    "steps": [
-      "Change the exterior wall colour",
-      "Open the cost estimator",
-      "Edit the construction rate"
-    ],
-    "expected": "The exterior changes and the budget recalculates using the new rate."
-  },
-  {
-    "name": "Use the planner on mobile and remove an item",
+    "name": "Use a community template copy and validate setup",
     "viewport": "mobile",
     "covers": [
-      "responsive layout",
-      "mobile controls",
-      "delete selected item"
+      "community templates",
+      "independent template copies",
+      "setup validation",
+      "responsive layout"
     ],
-    "description": "Checks mobile planning controls and safe item removal.",
+    "description": "Verifies the community flow remains usable on mobile and invalid project setup is rejected.",
     "steps": [
-      "Open the planner at mobile width",
-      "Select a room and delete it",
-      "Check the floor plan"
+      "Open Community Templates from the welcome screen",
+      "If a local template exists, choose Use this template",
+      "Open Blank project and try to create a project with zero plot length"
     ],
-    "expected": "The planner remains usable and the selected room is removed."
+    "expected": "A template opens as a separate project, and invalid plot dimensions trigger a validation message."
   }
 ]
