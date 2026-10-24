@@ -1,0 +1,55 @@
+[
+  {
+    "name": "Edit a room and download a floor plan",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": ["room selection", "room dimension editing", "PNG plan export"],
+    "description": "Verifies the main design workflow allows room dimensions to change and exports the visible plan as an image.",
+    "steps": [
+      "Select Living room in the room list",
+      "Change its width to 7",
+      "Click Export plan"
+    ],
+    "expected": "The room dimensions update in the plan and a PNG floor plan download starts."
+  },
+  {
+    "name": "Add a room and persist the layout",
+    "viewport": "desktop",
+    "covers": [
+      "add room",
+      "browser local storage persistence",
+      "room count and area summary"
+    ],
+    "description": "Verifies a room can be added and remains in the plan after reloading.",
+    "steps": ["Click Add a room", "Choose Office", "Refresh the page"],
+    "expected": "Office remains in the room list and the space count includes the new room."
+  },
+  {
+    "name": "Switch between 2D and 3D views",
+    "viewport": "desktop",
+    "covers": ["2D floor plan", "isometric 3D view", "view mode summary"],
+    "description": "Verifies both plan views are selectable and the summary reflects the active view.",
+    "steps": [
+      "Click 3D view",
+      "Verify the isometric room layout appears",
+      "Click 2D plan"
+    ],
+    "expected": "The isometric concept view appears in 3D mode and the top-down plan returns in 2D mode."
+  },
+  {
+    "name": "Reject invalid room dimensions",
+    "viewport": "mobile",
+    "covers": [
+      "dimension input guardrail",
+      "mobile room panel",
+      "responsive layout"
+    ],
+    "description": "Verifies room dimensions cannot be set below the minimum and room settings remain usable on a narrow screen.",
+    "steps": [
+      "Open the room panel with the menu button",
+      "Select a room",
+      "Enter 0 as its width"
+    ],
+    "expected": "The width is clamped to at least 1 and the room remains visible in the layout."
+  }
+]
